@@ -1,0 +1,177 @@
+@font-face {
+  font-family: 'Dream';
+  src: url('Daydream.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'EEGB';
+  src: url('ADELIA.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'bluestyle';
+  src: url('Blue Style.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f6f0;
+  overflow: hidden;
+}
+
+.pixel-art {
+  font-family: 'Dream', monospace;
+  font-size: 24px;
+  color: #222323;
+  text-align: center;
+  position: relative; /* Set position to relative */
+  top: 0; /* Initial position */
+  transition: top 0.5s ease-in-out; /* Transition for top property */
+}
+
+.letter {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  margin: 0 2px;
+  transition: color 0.5s ease-in-out;
+}
+
+.letter.active {
+  color: #494d7e;
+}
+
+.letter.inactive {
+  color: #222323;
+}
+
+.expanding-box {
+  width: 15%; /* 90% of the viewport width */
+  height: 10vh; /* 50% of the viewport height */
+  background-color: transparent;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 1s ease-in-out, height 1s ease-in-out;
+  overflow: hidden;
+  opacity: 0;
+}
+
+
+.expanding-box.expanded {
+  width: 62%; /* Adjust as needed */
+  height: 61vh; /* Adjust as needed */
+  opacity: 1;
+}
+.box-container {
+  transition: opacity 0.5s ease-in-out;
+  width: 100%;
+  height: 100%;
+  background-color: transparent; /* Set to the same color as the background outside the box */
+  padding: 20px; /* Adjust padding as needed */
+  box-sizing: border-box;
+  border: 2px solid #272744; /* Set border to white */
+  overflow-y: auto;
+}
+
+.box-container.fade-out {
+  opacity: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  width: 90%;
+  padding: 20px;
+  background-color: #f0f6f0;
+  z-index: 2; /* Ensure it's above other elements */
+}
+
+.nav-item {
+  font-family: 'Dream', monospace;
+  font-size: 18px;
+  color: #222323;
+  cursor: pointer;
+  transition: color 1s ease-in-out;
+}
+
+.nav-item:hover {
+  color: #494d7e;
+}
+
+.white-text {
+  color: #222323 !important; /* Set the text color to white */
+  font-family: 'Dream', monospace;
+
+}
+
+.green-text {
+  color: #222323 !important; /* Set the text color to white */
+  font-family: 'Dream', monospace;
+
+}
+
+.resource {
+  color:#8b6d9c; 
+  text-decoration: none; 
+  font-size: 24px;
+  font-family: 'bluestyle', monospace;
+}
+
+/* Custom Scrollbar for Webkit browsers (Chrome, Safari) */
+/* Custom Scrollbar for Webkit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the vertical scrollbar */
+  height: 12px; /* Height of the horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f0f6f0; /* Scrollbar track color */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #222323; /* Scrollbar thumb color */
+  border-radius: 6px; /* Rounded corners for the scrollbar thumb */
+  border: 3px solid #f0f6f0; /* Creates a border around the scrollbar thumb */
+}
+
+/* Custom Scrollbar for Firefox */
+* {
+  scrollbar-width: thin; /* 'auto' or 'thin' are also options */
+  scrollbar-color: #222323 #f0f6f0; /* thumb and track color */
+}
+
+.content-heading {
+  font-family: "EEGB", monospace;
+  color: #222323; 
+  font-size: 16px; 
+  padding-left: 3px;
+}
+
+.pixel-border {
+  border: 10px solid #494d7e; /* Sets a 10px solid black border */
+  box-shadow: 0 0 10px 0 #494d7e; /* Optional: Adds a shadow for depth */
+  image-rendering: pixelated;
+  margin: 5px;
+}
+
+.content-writing {
+  font-family: "bluestyle", monospace; 
+  font-size: 24px;
+  color: #494d7e;
+}
